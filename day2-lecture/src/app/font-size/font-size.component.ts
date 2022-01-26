@@ -6,10 +6,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./font-size.component.css']
 })
 export class FontSizeComponent implements OnInit {
+  fontSize : string = '1em';
+
   @Input() message:string = "";
   @Output() onFontSize = new EventEmitter<number> ();
 
-  fontSize : string = '1em';
   fontSizeChanged($event:any) {
     let fontSize = parseInt($event.target.value);
     this.fontSize=`${fontSize}em`;

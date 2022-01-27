@@ -1,0 +1,32 @@
+.container {
+  justify-content: center;
+}
+
+.container2 {
+  justify-content: center;
+}
+
+.box1 {
+  background-color: bisque;
+}
+
+.box2 {
+  background-color: aqua;
+
+}
+
+.box3 {
+  background-color: brown;
+}
+
+.box4 {
+  background-color: chartreuse;
+}
+
+.box5 {
+  background-color: cadetblue;
+}
+
+.box6 {
+  background-color: aliceblue;
+}

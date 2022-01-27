@@ -18,15 +18,17 @@
       <mat-card-header>
         <mat-card-title>Add Todo</mat-card-title>
         <mat-card-title>Edit Todo</mat-card-title>
+      </mat-card-header>
 
         <mat-card-content>
           <mat-form-field>
-            <input matInput>
+            <input matInput formControlName="task">
           </mat-form-field>
           <div>
-            <label>Priority</label>
-            <mat-radio-group>
-              <mat-radio-button>low</mat-radio-button>
+            <label>Priority: &nbsp;</label>
+            <mat-radio-group aria-label="Select an option" formControlName="priority">
+              <mat-radio-button *ngFor="let p of priorities" value="{{p}}"> {{p}}
+              </mat-radio-button>
             </mat-radio-group>
           </div>
           <mat-form-field>
@@ -45,11 +47,19 @@
           </mat-form-field>
 
           <div>
-            <button mat-raised-button color="primary" type="button">Add</button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Add</button>
             <button mat-raised-button color="primary" type="button">Update</button>
           </div>
         </mat-card-content>
-      </mat-card-header>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>My Todo List</mat-card-header>
+      <mat-card-content>
+        <div *ngFor="let t of todosValues">
+          <span >{{t.task}} - {{t.dueDate | date:"dd/MM/yyyy" }} - {{t.priority}}</span><br>
+        </div>
+      </mat-card-content>
     </mat-card>
   </form>
 </div>

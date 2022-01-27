@@ -10,8 +10,6 @@ import {MatRadioModule} from '@angular/material/radio'
 import {MatDividerModule} from '@angular/material/divider'
 import {MatToolbarModule} from '@angular/material/toolbar'
 
-
-
 const MATERIAL = [
   MatButtonModule,
   MatCardModule,

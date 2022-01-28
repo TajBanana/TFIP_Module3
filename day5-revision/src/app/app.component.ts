@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'day5-revision';
+  parentCount = 100;
+  childCount = -1;
+
+  updateChildCount($event: number) {
+    this.childCount = $event;
+  }
 }

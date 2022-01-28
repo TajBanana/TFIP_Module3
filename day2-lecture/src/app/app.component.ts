@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'day2-lecture';
+
   sizeChanged(size: number) {
     console.log(`font size: ${size})`)
   }

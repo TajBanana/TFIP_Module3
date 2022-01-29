@@ -1,5 +1,28 @@
-<h1>{{title}}</h1>
-<input [value]="name">
-<button type="button" [disabled]="isDisabled">CLick</button>
+<div class="container">
+  <h1 class="row">{{title}}</h1>
+  <div class="row justify-content-center justify-content-between">
 
-<p [style.font-size]="fontSize">{{greetings}}</p>
+    <div class="col-md-6">
+      <h1 class="p-3">Inventory list</h1>
+      <div class="p-3 m-3 border bg-light" *ngFor="let item of inventoryList">
+        <img class="img-fluid" src="../assets/images/{{item}}.jpg" alt="">
+        <span class="">{{item}}</span>
+        <button type="button" class="btn btn-primary" (click)="onAdd(item)">Add</button>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <h1 class="p-3">Cart</h1>
+      <div class="p-3 m-3 border bg-light" *ngFor="let item of inventoryList">
+        <span *ngIf="cartMap.get(item)! > 0">
+          <img class="img-fluid" src="../assets/images/{{item}}.jpg" alt="">
+          <span  class="">{{item}}</span>
+          <span> quantity {{cartMap.get(item)}}</span>
+          <button type="button" class="btn btn-primary" (click)="onRemove(item)">Remove</button>
+        </span>
+
+      </div>
+    </div>
+
+  </div>
+</div>

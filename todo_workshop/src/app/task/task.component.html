@@ -3,8 +3,10 @@
   <h2>Add todo</h2>
   <form [formGroup]="todoForm" (ngSubmit)="addTodo()" #formDirective="ngForm">
     <td>
-      <input type="text" formControlName="task"><br>
+<!--      one type of data binding-->
+      <input type="text" [formControlName]="'task'"><br>
       <label>Start date:</label><br>
+<!--      second type of data binding-->
       <input type="date" formControlName="dueDate" [min]="today">
 
       <div>

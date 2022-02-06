@@ -1,5 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {Todo} from "../task/todo";
+import {Subject} from "rxjs";
+import {FormArray, FormBuilder} from "@angular/forms";
 
 @Component({
   selector: 'app-tasklist',
@@ -9,10 +11,15 @@ import {Todo} from "../task/todo";
 export class TasklistComponent implements OnInit {
 
   @Input() todoList: Todo[] = [];
+  @Output() onDeleteIndex = new Subject<number>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  deleteTask(i:number) {
+    console.log('delete index: ' + i.toString())
+    this.onDeleteIndex.next(i);
   }
 
   logTodoList() {

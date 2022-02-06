@@ -1,0 +1,31 @@
+<p>checkbox works!</p>
+
+<form [formGroup]="hobbiesForm" (ngSubmit)="processHobbies()">
+  <tr>
+    <td>Hobbies:</td>
+
+<!--    <td formArrayName="hobbies">
+    <span *ngFor="let ctrl of hobbiesArray.controls; let i = index">
+      <input type="checkbox" [formControl]="ctrl"> {{hobbies[i]}}
+    </span>
+    </td>-->
+
+    <td formArrayName="hobbies">
+    <span *ngFor="let h of hobbiesList; let i = index">
+      <input type="checkbox" [formControl]="hobbiesArray.controls[i]"> {{ h }}
+    </span>
+    </td>
+  </tr>
+
+  <ol>
+    <div *ngFor="let status of hobbiesStatus; let i = index">
+      <li *ngIf="status"> {{hobbiesList[i]}}</li>
+    </div>
+  </ol>
+
+  <button type="submit">log</button>
+</form>
+
+
+
+

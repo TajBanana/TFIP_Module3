@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { TaskComponent } from './task/task.component';
 import { TasklistComponent } from './tasklist/tasklist.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskComponent,
-    TasklistComponent
+    TasklistComponent,
+    CheckboxComponent
   ],
   imports: [
     BrowserModule,

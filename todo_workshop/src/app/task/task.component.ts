@@ -50,7 +50,7 @@ export class TaskComponent implements OnInit {
 
     let i = this.todoList.length
 
-    localStorage.setItem(String(i), JSON.stringify(singleTodo))
+    // localStorage.setItem(String(i), JSON.stringify(singleTodo))
 
     console.log('passing to parent');
     this.onSubmitTask.next(this.todoList);

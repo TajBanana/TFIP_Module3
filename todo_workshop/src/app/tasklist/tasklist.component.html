@@ -1,5 +1,7 @@
-<p>{{todoList.toString()}}</p>
-<div *ngFor="let task of todoList">
+<h1>Outstanding Todo</h1>
+<div *ngFor="let task of todoList; let i = index">
   <span>{{task.task}} - {{task.dueDate}}</span>
+  <button type="button" (click)="deleteTask(i)">Delete</button>
 </div>
-<button type="button" (click)="logTodoList()">log</button>
+
+<!--<button type="button" (click)="logTodoList()">log</button>-->

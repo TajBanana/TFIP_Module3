@@ -1,3 +1,5 @@
 <app-task (onSubmitTask) = "updateTaskList($event)" ></app-task>
 <hr>
-<app-tasklist [todoList] = "todoList" ></app-tasklist>
+<app-tasklist [todoList] = "todoList" (onDeleteIndex)="deleteTask($event)"></app-tasklist>
+<hr>
+<app-checkbox></app-checkbox>

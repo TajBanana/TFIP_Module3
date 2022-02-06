@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Todo} from "./task/todo";
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo_workshop';
+  todoList : Todo[] = [];
+
+  updateTaskList (taskList : Todo[]) {
+    this.todoList = taskList;
+    console.log('logged from parent: ' + taskList)
+  }
 }

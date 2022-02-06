@@ -1,1 +1,5 @@
-<p>tasklist works!</p>
+<p>{{todoList.toString()}}</p>
+<div *ngFor="let task of todoList">
+  <span>{{task.task}} - {{task.dueDate}}</span>
+</div>
+<button type="button" (click)="logTodoList()">log</button>

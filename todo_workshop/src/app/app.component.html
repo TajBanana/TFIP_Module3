@@ -1,2 +1,3 @@
-<app-task></app-task>
-<app-tasklist></app-tasklist>
+<app-task (onSubmitTask) = "updateTaskList($event)" ></app-task>
+<hr>
+<app-tasklist [todoList] = "todoList" ></app-tasklist>

@@ -1,4 +1,23 @@
 <h1>{{title}}</h1>
-<td>
-  <input type="text" formControlName="">
-</td>
+<div>
+  <h2>Add todo</h2>
+  <form [formGroup]="todoForm" (ngSubmit)="addTodo()" #formDirective="ngForm">
+    <td>
+      <input type="text" formControlName="task"><br>
+      <label>Start date:</label><br>
+      <input type="date" formControlName="dueDate" [min]="today">
+
+      <div>
+        <span *ngFor="let item of priorities">
+        <input type="radio" name="priority" formControlName="priority" value="{{item}}"> {{item}}
+        </span>
+      </div>
+
+    </td>
+    <button type="submit" [disabled]="todoForm.invalid">Add</button>
+  </form>
+
+
+
+</div>
+

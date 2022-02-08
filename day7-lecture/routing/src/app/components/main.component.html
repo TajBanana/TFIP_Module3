@@ -1,0 +1,11 @@
+<h2>Main Component</h2>
+
+<form [formGroup]="form" (ngSubmit)="goToNumber()">
+  <label for="num">Please input number:</label>
+  <select id="num" formControlName="num">
+    <option *ngFor="let i of numArray"> {{i}}</option>
+  </select>
+  <button type="submit">GO</button>
+<!--  <input type="number" id="num" formControlName="num">
+  <button type="submit">GO</button>-->
+</form>

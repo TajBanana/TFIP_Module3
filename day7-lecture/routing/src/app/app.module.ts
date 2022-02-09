@@ -7,11 +7,19 @@ import {RouterModule, Routes} from "@angular/router";
 import { MainComponent } from './components/main.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { OneComponent } from './components/one.component';
+import { NumbersComponent } from './components/numbers.component';
+import {NumberGuardService} from "./number-guard.service";
+import {RandomInject} from "./randomInject";
 
 //routes to import
 const appRoutes : Routes = [
   {path: '' , component:MainComponent},
   {path: '1', component:OneComponent},
+  //able to add canActivate canDeactivate and if the conditions are met, page will load or go back
+  {
+    path: 'number/:num', component: NumbersComponent,
+    canActivate: [NumberGuardService]
+  },
   {path: '**', component:MainComponent}
 ]
 
@@ -20,6 +28,7 @@ const appRoutes : Routes = [
     AppComponent,
     MainComponent,
     OneComponent,
+    NumbersComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +37,7 @@ const appRoutes : Routes = [
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [NumberGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

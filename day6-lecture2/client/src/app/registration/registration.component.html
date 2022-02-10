@@ -1,5 +1,5 @@
 <h3>{{regHeader}}</h3>
-<form [formGroup]="registrationForm" (ngSubmit)="submitDetails()">
+<form [formGroup]="registrationForm" (ngSubmit)="submitForm()">
   <tr>
     <td>Name:</td>
     <td>
@@ -18,5 +18,8 @@
       <input type="text" formControlName="phone" name="phone">
     </td>
   </tr>
-  <button type="submit">Submit</button>
+  <button type="submit" [disabled]="registrationForm.invalid">Submit</button>
+<!--  <p>valid:{{registrationForm.valid}}</p>-->
+<!--  <p>invalid:{{registrationForm.invalid}}</p>-->
+
 </form>

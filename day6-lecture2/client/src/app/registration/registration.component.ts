@@ -13,8 +13,7 @@ export class RegistrationComponent implements OnInit {
 
   regHeader: string = 'Registration';
   registrationForm!: FormGroup;
-
-  @Output() sendForm = new Subject<Array<string>>()
+  registrationResponse: string = 'empty';
 
   constructor(private fb : FormBuilder, private registrationSvc: RegistrationService) { }
 
@@ -30,10 +29,13 @@ export class RegistrationComponent implements OnInit {
     })
   }
 
-  submitForm() {
+  async submitForm() {
     const registration = this.registrationForm.value as Registration;
     console.info('>>> registration form details: ', registration);
-    this.registrationSvc.postForm(registration);
+    console.log(await this.registrationSvc.postForm(registration).then(r => this.registrationResponse = r.message));
+    alert(this.registrationResponse)
     this.registrationForm.reset()
+
   }
+
 }
